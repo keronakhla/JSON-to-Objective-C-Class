@@ -10,4 +10,10 @@
 
 @interface Person : NSObject
 
+@property NSString *personFirstName;
+@property NSString *personMiddleName;
+@property NSString *personLastName;
+
+-(instancetype)initWithJSONString:(NSString *)JSONString;
+
 @end
