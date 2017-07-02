@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Person.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // JSON String
+    NSString *JSONStr = @"{ \"personFirstName\":\"Steve\", \"personMiddleName\":\"Paul\", \"personLastName\":\"Jobs\" }";
+    
+    // Init class
+    Person *person = [[Person alloc] initWithJSONString:JSONStr];
+    
+    // We can print
+    NSLog(@"%@", person.personFirstName);
+    NSLog(@"%@", person.personMiddleName);
+    NSLog(@"%@", person.personLastName);
+
     return YES;
 }
 
